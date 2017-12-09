@@ -36,7 +36,7 @@ public final class CdxWarcReader
 {
 	
 	public static class WarcMapper extends
-	Mapper<Object, Text, Object, Text> {
+	Mapper<LongWritable, Text, LongWritable, Text> {
 
 private final static NullWritable outKey = NullWritable.get();
 private int rescode;
@@ -87,7 +87,7 @@ public String getDomain (String url) throws MalformedURLException
 }
 
 
-public void map(Object key, Text value, Context context)
+public void map(LongWritable key, Text value, Context context)
 		throws IOException, InterruptedException {
 	
 	test++;
@@ -230,7 +230,7 @@ public static void ArchiveRecordIterator (String p,long offset, Context context,
 	    {
 				//if (u.contentEquals(url.toString()))
 			//	if (record.getHeader().getOffset()==offset)
-				context.write (outKey,new Text (record.getHeader().getUrl() + " "+ url + " " + record.getHeader().getOffset()+ " "+ offset));
+			//	context.write (outKey,new Text (record.getHeader().getUrl() + " "+ url + " " + record.getHeader().getOffset()+ " "+ offset));
 			    
 	    	
 	    }
