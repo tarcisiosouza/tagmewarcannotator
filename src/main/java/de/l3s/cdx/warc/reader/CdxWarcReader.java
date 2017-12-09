@@ -280,7 +280,7 @@ job.setJarByClass(CdxWarcReader.class);
 // Setup MapReduce
 job.setMapperClass(WarcMapper.class);
 job.setReducerClass(WarcReducer.class);
-job.setNumReduceTasks(100);
+job.setNumReduceTasks(5000);
 
 // Specify key / value
 job.setOutputKeyClass(LongWritable.class);
