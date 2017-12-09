@@ -285,7 +285,7 @@ job.setNumReduceTasks(100);
 // Specify key / value
 job.setOutputKeyClass(LongWritable.class);
 job.setOutputValueClass(Text.class);
-job.setMapOutputKeyClass(NullWritable.class);
+job.setMapOutputKeyClass(LongWritable.class);
 job.setMapOutputValueClass(Text.class);
 // Input
 FileInputFormat.addInputPath(job, inputPath);
