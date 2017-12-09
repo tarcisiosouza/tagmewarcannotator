@@ -163,16 +163,7 @@ public void setUrl(String url) {
 }
 
 
-public static class WarcReducer extends Reducer<LongWritable, Text, NullWritable, Text>
-{
-public void reduce(Object key, Text value, Mapper<Object, Text, NullWritable, Text>.Context context)
-		throws IOException, InterruptedException, URISyntaxException {
-/*	
-	String url = "hdfs://nameservice1/data/british_lib/";
-	getFilesRecursively (url,value.toString(),context);*/
-	context.write(outKey, new Text (value.toString()));
-}
-}
+
 public static void getFilesRecursively(String Url,String fileName,Context context) throws IOException, URISyntaxException {
 	
     Path location = new Path(Url);
